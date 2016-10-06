@@ -97,7 +97,7 @@ public class LessStream extends Stream {
   }
 
   public LessStream(LessParser parser, String raw, Path path) {
-    this(parser, raw, null, null);
+    this(parser, raw, path, null);
   }
 
   public LessStream(LessParser parser, String raw, Path path, ExecEnv env) {
