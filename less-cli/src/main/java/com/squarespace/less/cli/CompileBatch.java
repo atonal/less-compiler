@@ -16,17 +16,6 @@
 
 package com.squarespace.less.cli;
 
-import java.io.IOException;
-import java.io.PrintStream;
-import java.nio.file.Files;
-import java.nio.file.NoSuchFileException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.squarespace.less.LessContext;
 import com.squarespace.less.LessException;
 import com.squarespace.less.cli.LessC.Args;
@@ -34,19 +23,28 @@ import com.squarespace.less.core.ErrorUtils;
 import com.squarespace.less.core.LessUtils;
 import com.squarespace.less.model.Stylesheet;
 
+import java.io.IOException;
+import java.io.PrintStream;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 
 /**
  * Compiles a batch of files.
  */
 class CompileBatch extends BaseCompile {
 
-    CompileBatch(Args args, PrintStream out, PrintStream err) {
-        super(args, out, err, System.in);
-    }
-
     static final String DEFAULT_INCLUDE_PATTTERN = "glob:[!_]*.less";
     static final boolean DEFAULT_PRESERVE_PATH = false;
 
+    CompileBatch(Args args, PrintStream out, PrintStream err) {
+        super(args, out, err, System.in);
+    }
 
     @Override
     public int process() {

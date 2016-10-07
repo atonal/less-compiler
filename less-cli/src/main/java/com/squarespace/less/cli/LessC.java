@@ -16,7 +16,14 @@
 
 package com.squarespace.less.cli;
 
-import static com.squarespace.less.LessCompiler.LESSJS_VERSION;
+import com.squarespace.less.LessBuildProperties;
+import com.squarespace.less.LessOptions;
+import net.sourceforge.argparse4j.ArgumentParsers;
+import net.sourceforge.argparse4j.impl.Arguments;
+import net.sourceforge.argparse4j.inf.ArgumentParser;
+import net.sourceforge.argparse4j.inf.ArgumentParserException;
+import net.sourceforge.argparse4j.inf.Namespace;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.InputStream;
 import java.io.PrintStream;
@@ -24,16 +31,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import net.sourceforge.argparse4j.ArgumentParsers;
-import net.sourceforge.argparse4j.impl.Arguments;
-import net.sourceforge.argparse4j.inf.ArgumentParser;
-import net.sourceforge.argparse4j.inf.ArgumentParserException;
-import net.sourceforge.argparse4j.inf.Namespace;
-
-import org.apache.commons.lang3.StringUtils;
-
-import com.squarespace.less.LessBuildProperties;
-import com.squarespace.less.LessOptions;
+import static com.squarespace.less.LessCompiler.LESSJS_VERSION;
 
 
 /**

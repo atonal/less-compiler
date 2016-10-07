@@ -6,7 +6,6 @@ java_library(
     resources = glob([
         "src/main/resources/**",
     ]),
-    visibility = ["//visibility:public"],
     deps = [
         "@net_sourceforge_argparse4j_argparse4j//jar",
         "@org_apache_commons_commons_lang3//jar",
@@ -16,6 +15,7 @@ java_library(
 
 java_binary(
     name = "lessc",
+    visibility = ["//visibility:public"],
     main_class = "com.squarespace.less.cli.LessC",
     runtime_deps = [
         ":less-cli",
