@@ -187,12 +187,14 @@ public class LessUtils {
 
   public static DirectoryStream<Path> getMatchingFiles(Path root, String pattern) throws IOException {
     final PathMatcher matcher = FileSystems.getDefault().getPathMatcher(pattern);
-    return Files.newDirectoryStream(root, new DirectoryStream.Filter<Path>() {
+    try (DirectoryStream ds = Files.newDirectoryStream(root, new DirectoryStream.Filter<Path>() {
       @Override
       public boolean accept(Path entry) throws IOException {
         return !Files.isDirectory(entry) && matcher.matches(entry.getFileName());
       }
-    });
+    })) {
+      return ds;
+    }
   }
 
   /**
